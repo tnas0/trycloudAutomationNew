@@ -2,6 +2,7 @@ package com.trycloud.step_definitions;
 
 import com.trycloud.pages.BasePage;
 import com.trycloud.pages.ContactsPage;
+import com.trycloud.pages.HomePage;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -11,13 +12,13 @@ import org.junit.Assert;
 
 public class US12_AccessContactsModules {
 
-    BasePage basePage = new BasePage();
+    HomePage homePage = new HomePage();
     ContactsPage contactsPage = new ContactsPage();
 
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        basePage.login();
+        homePage.login();
     }
     @When("user clicks the {string} module")
     public void user_clicks_the_module(String string) {
