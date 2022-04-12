@@ -2,7 +2,7 @@
 Feature:As a user, I should be able to delete a file/folder.
 
   Background:
-    Given user on the dashboard page
+    Given User On the Dashboard Page
 
   Scenario: Verify users delete a file/folder
     When the user clicks the "Files" module

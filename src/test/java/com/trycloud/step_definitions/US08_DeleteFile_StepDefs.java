@@ -16,8 +16,8 @@ public class US08_DeleteFile_StepDefs extends HomePage {
     FilesPage filesPage = new FilesPage();
     String deletedItemText;
 
-    @Given("user on the dashboard page")
-    public void user_on_the_dashboard_page() {
+    @Given("User On the Dashboard Page")
+    public void User_On_the_Dashboard_Page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         homePage.login();
     }
