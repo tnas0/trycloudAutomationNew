@@ -20,13 +20,13 @@ public class US10_UpdateSettings_StepDefinitions {
     HomePage homePage =new HomePage();
     UpdateSettingsPage updateSettingsPage=new UpdateSettingsPage();
     double CurrentStorage;
-    @Given("user will be on the dashboard page")
-    public void userWillBeOnTheDashboardPage() {
+
+
+    @Given("user on the dashboard page")
+    public void user_on_the_dashboard_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         homePage.login();
     }
-
-
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String string) {
         updateSettingsPage.files.click();
@@ -70,7 +70,7 @@ public class US10_UpdateSettings_StepDefinitions {
     @When("user refresh the page")
     public void user_refresh_the_page() {
      Driver.getDriver().navigate().refresh();
-     BrowserUtils.sleep(5);}
+     BrowserUtils.sleep(3);}
     @Then("the user should be able to see storage usage is increase")
     public void the_user_should_be_able_to_see_storage_usage_is_increase() {
         updateSettingsPage.currentStorage.getText();
@@ -78,7 +78,6 @@ public class US10_UpdateSettings_StepDefinitions {
                 substring(0,updateSettingsPage.currentStorage.getText().indexOf(" "));
         double newStorage=Double.parseDouble(storage2);
         Assert.assertTrue((newStorage-CurrentStorage)>0);}
-
 
 
 }
