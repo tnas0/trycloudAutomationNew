@@ -13,6 +13,9 @@ public class FilesPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//label[@for='select_all_files']")
+    public WebElement TopLeftCheckBox;
+
     @FindBy(xpath = "//a[@data-action='menu']//span/..")
     public WebElement actionBtn;
 
