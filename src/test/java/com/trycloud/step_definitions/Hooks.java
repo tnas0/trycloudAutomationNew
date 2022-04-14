@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
-    @After
+   @After
     public void teardownScenario(Scenario scenario){
         //scenario.isfailed()-->if scenario fails this method  will return TRUE boolean value
         if(scenario.isFailed()){

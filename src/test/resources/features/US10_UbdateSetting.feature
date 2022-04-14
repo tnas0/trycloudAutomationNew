@@ -2,7 +2,7 @@
 Feature: Update settings feature
  As a user, I should be able to update settings.
   Background:
-    Given user on the dashboard page
+    Given user will be on the dashboard page
     When the user clicks the "Files" module
  @us_10_1
 Scenario: Verify users update settings
