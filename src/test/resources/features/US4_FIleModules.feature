@@ -2,7 +2,7 @@
 Feature: As a user, I should be able to access to Files module.
   Background:
     Given user on the dashboard page us4
-    When user clicks "Files" module
+    When user clicks "Files" module us4
 
   @wip
   Scenario: verify users can access to Files module
