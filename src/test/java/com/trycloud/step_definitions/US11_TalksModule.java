@@ -13,18 +13,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class US11_TalksModule extends HomePage{
+public class US11_TalksModule extends HomePage {
 
     TalksPage talksPage = new TalksPage();
 
     HomePage homePage = new HomePage();
 
 
-    @Given("user is on the Dashboard page")
-    public void user_is_on_the_Dashboard_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        homePage.login();
+    @Given("User on the dashboard page")
+    public void UserOnTheDashboardPage() {
+     Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+     homePage.login();
     }
+
+
+
+
+
+
 
     @When("user search {string} user from the search box")
     public void user_search_user_from_the_search_box(String user) {
@@ -57,10 +63,15 @@ public class US11_TalksModule extends HomePage{
         Assert.assertTrue(postedMessage.isDisplayed());
     }
 
-    @Then("verify the page title is {string}")
+
+
+
+
+    @Then("Verify the page title is {string}")
     public void verifyThePageTitleIs(String arg0) {
-
-
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedTitle = "Talk - Trycloud";
+       Assert.assertEquals(actualTitle,expectedTitle);
     }
 }
 
